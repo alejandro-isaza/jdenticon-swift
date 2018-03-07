@@ -1,0 +1,16 @@
+language: swift
+osx_image: xcode9.2
+
+cache:
+  - cocoapods
+
+before_install:
+  - brew update
+  - brew install swiftlint || true
+
+script:
+  - set -o pipefail
+  - xcodebuild clean test -project JdenticonSwift.xcodeproj -scheme "JdenticonSwift" -destination 'platform=iOS Simulator,name=iPhone 8'
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
