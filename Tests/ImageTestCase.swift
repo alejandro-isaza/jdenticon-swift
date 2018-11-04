@@ -58,8 +58,8 @@ class ImageTestCase: XCTestCase {
         let referenceImagePixels = UnsafeMutablePointer<UInt8>.allocate(capacity: referenceImageSizeBytes)
         let imagePixels = UnsafeMutablePointer<UInt8>.allocate(capacity: referenceImageSizeBytes)
         defer {
-            referenceImagePixels.deallocate(capacity: referenceImageSizeBytes)
-            imagePixels.deallocate(capacity: referenceImageSizeBytes)
+            referenceImagePixels.deallocate()
+            imagePixels.deallocate()
         }
 
         let maybeReferenceImageContext = CGContext(
