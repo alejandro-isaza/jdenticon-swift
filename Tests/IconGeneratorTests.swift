@@ -33,4 +33,10 @@ class IconGeneratorTests: ImageTestCase {
         let image = UIImage(cgImage: generator.render()!)
         assertUnchanged(image)
     }
+
+    func testShortHash() throws {
+        let generator = IconGenerator(size: 100, hash: Data(bytes: [0x00]))
+        let image = UIImage(cgImage: generator.render()!)
+        assertUnchanged(image)
+    }
 }
