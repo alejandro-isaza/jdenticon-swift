@@ -21,9 +21,12 @@ public final class IconGenerator {
         self.size = size
         self.hash = hash
 
-        var digits = [UInt8](repeating: 0, count: hash.count * 2)
+        var digits = [UInt8](repeating: 0, count: max(12, hash.count * 2))
         var index = 0
         for byte in hash {
+            if index >= digits.count {
+                break
+            }
             digits[index] = (byte & 0xf0) >> 4
             digits[index+1] = byte & 0x0f
             index += 2
