@@ -47,6 +47,7 @@
 		61FE23022047DE370009FCDA /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		61FE2305204920840009FCDA /* ReferenceImages */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ReferenceImages; sourceTree = "<group>"; };
 		61FE2307204920A60009FCDA /* ImageTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTestCase.swift; sourceTree = "<group>"; };
+		8F86F41F25D014790045C0CA /* JdenticonSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; name = JdenticonSwift; path = ../JdenticonSwift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +72,7 @@
 		61FE22D52047C2380009FCDA = {
 			isa = PBXGroup;
 			children = (
+				8F86F41F25D014790045C0CA /* JdenticonSwift */,
 				61AB9ABA204F0DD700734DF3 /* README.md */,
 				61AB9ABB204F0E4200734DF3 /* LICENSE */,
 				61FE22F92047C25C0009FCDA /* Metadata */,
@@ -336,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -395,7 +397,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
