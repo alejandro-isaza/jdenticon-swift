@@ -23,7 +23,7 @@ class ImageTestCase: XCTestCase {
         let imageURL = testImageURL.appendingPathComponent(imageName).appendingPathExtension("png")
 
         if recording {
-            try? UIImagePNGRepresentation(image())?.write(to: imageURL)
+            ((try? image().pngData()?.write(to: imageURL)) as ()??)
             return
         }
 
