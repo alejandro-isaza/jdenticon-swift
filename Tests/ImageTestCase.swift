@@ -4,6 +4,8 @@
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
+#if canImport(UIKit)
+
 import XCTest
 
 class ImageTestCase: XCTestCase {
@@ -23,7 +25,7 @@ class ImageTestCase: XCTestCase {
         let imageURL = testImageURL.appendingPathComponent(imageName).appendingPathExtension("png")
 
         if recording {
-            try? UIImagePNGRepresentation(image())?.write(to: imageURL)
+            ((try? image().pngData()?.write(to: imageURL)) as ()??)
             return
         }
 
@@ -116,3 +118,5 @@ class ImageTestCase: XCTestCase {
 
     }
 }
+
+#endif

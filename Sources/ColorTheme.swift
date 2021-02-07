@@ -4,6 +4,8 @@
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
+#if canImport(UIKit)
+    
 import UIKit
 
 public final class ColorTheme {
@@ -62,3 +64,5 @@ func lightness(_ value: CGFloat, min: CGFloat, max: CGFloat) -> CGFloat {
     let lightness = min + value * (max - min)
     return Swift.min(1, Swift.max(0, lightness))
 }
+
+#endif

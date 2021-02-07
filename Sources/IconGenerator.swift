@@ -4,6 +4,8 @@
 // terms governing use, modification, and redistribution, is contained in the
 // file LICENSE at the root of the source code distribution tree.
 
+#if canImport(UIKit)
+
 import CoreGraphics
 
 public final class IconGenerator {
@@ -42,8 +44,15 @@ public final class IconGenerator {
     }
 
     private func selectColors() {
-        let value = hash.withUnsafeBytes { (ptr: UnsafePointer<UInt32>) in
-            return ptr.advanced(by: hash.count/4 - 1).pointee.byteSwapped & 0x0fffffff
+        let value: UInt32 = hash.withUnsafeBytes { ptr in
+            if let ptrAddr = ptr.baseAddress {
+                let advPtr = ptrAddr.advanced(by: hash.count/4 - 1)
+                let pointee = advPtr.load(as: UInt32.self)
+                let p =  pointee.byteSwapped & 0x0fffffff
+                return p
+            } else {
+                return 0
+            }
         }
         let colorTheme = ColorTheme(hue: CGFloat(value) / CGFloat(0x0fffffff))
 
@@ -116,3 +125,5 @@ public final class IconGenerator {
         }
     }
 }
+
+#endif
